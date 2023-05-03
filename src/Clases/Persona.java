@@ -9,11 +9,11 @@ public class Persona {
     
 //    atributos
     
-    String nombre;
-    byte edad;
-    String sexo;
-    double peso;
-    double altura;
+    private String nombre;
+    private byte edad;
+    private String sexo;
+    private double peso;
+    private double altura;
     
     
     

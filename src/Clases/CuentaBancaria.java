@@ -13,9 +13,9 @@ public class CuentaBancaria {
     
 //    Atributos
     
-    int Numerocuenta;
-    long dniCliente;
-    double saldoActual;
+    private int Numerocuenta;
+    private long dniCliente;
+    private double saldoActual;
 
 //    Constructores
     
