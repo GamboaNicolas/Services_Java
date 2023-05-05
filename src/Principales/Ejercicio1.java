@@ -7,6 +7,7 @@ package Principales;
 
 import Clases.CuentaBancaria;
 import Servicios.CuentaBancariaServicio;
+import java.util.Scanner;
 
 
 /**
@@ -23,16 +24,83 @@ public class Ejercicio1{
     
     public static void main(String[] args){
         
+        Scanner leer = new Scanner(System.in);
+        
+        System.out.println("Bienvenido a la aplicación del banco,"
+                + "\npara iniciar debe crear una cuenta bancaria.");
+        
         CuentaBancariaServicio bank = new CuentaBancariaServicio();
         
-        CuentaBancaria gamboa = bank.CrearCuenta();
+        CuentaBancaria cuenta = bank.CrearCuenta();
         
-//        System.out.println("Bienvenido a la app del sistema bancario.");
-
-        /**
-         * Acá se puede armar tipo una app para administrar una o varias cuentas bancarias.
-         */
+        int opcion = 0;
         
+        System.out.println("");
+        
+        while (opcion != 5) {
+            
+            opciones();
+            
+            opcion = leer.nextInt();
+            
+            while (!(opcion == 1 || opcion == 2 || opcion== 3 || opcion == 4 || opcion == 5)) {                
+                
+                System.out.println("Por favor, ingrese una opcion válida.");
+                
+                opciones();
+            
+                opcion = leer.nextInt();
+                
+            }
+            
+            switch(opcion){
+                
+                case 1:
+                    bank.ingresar(cuenta);
+                    break;
+                case 2:
+                    
+                    System.out.println("¿Qué tipo de extracción desea realizar?\n1_Normal\n2_Rápida(hasta el 20% del saldo)");
+                    
+                    int n = leer.nextInt();
+                    
+                    while (!(n == 1 || n == 2)) {                        
+                        
+                        System.out.println("Ingrese una opcion válida");
+                        System.out.println("¿Qué tipo de extracción desea realizar?\n1_Normal\n2_Rápida(hasta el 20% del saldo)");
+                    
+                        n = leer.nextInt();
+                        
+                    }
+                    
+                    if (n == 1) {
+                        bank.retirar(cuenta);
+                    }else{
+                        bank.extraccionRapida(cuenta);
+                    }
+                    
+                    break;
+                case 3:
+                    bank.consultarSaldo(cuenta);
+                    break;
+                default:
+                    bank.consultarDatos(cuenta);
+            }   
+            
+            
+            
+        }
+        
+        
+    }
+    
+    public static void opciones(){
+        System.out.println("¿Qué desea hacer?");
+        System.out.println("1_Ingresar dinero a mi cuenta");
+        System.out.println("2_Retirar dinero de mi cuenta");
+        System.out.println("3_Consultar saldo");
+        System.out.println("4_consultar datos");
+        System.out.println("5_Salir");
     }
     
 }

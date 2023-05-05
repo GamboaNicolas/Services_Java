@@ -20,19 +20,41 @@ public class Ejercicio3 {
     
     public static void main(String[] args) {
         
-        PersonaServicio personaServ = new PersonaServicio();
+        PersonaServicio p1 = new PersonaServicio();
         
-        Persona persona1 = personaServ.crearPersona();
+        Persona persona1 = p1.crearPersona();
         
-        System.out.println(personaServ.calcularIMC(persona1));
-        System.out.println(personaServ.esMayorDeEdad(persona1));
+        Persona persona2 = p1.crearPersona();
         
+        Persona persona3 = p1.crearPersona();
         
-        
-        
-        
+        Persona persona4 = p1.crearPersona();
         
         
+        PesoIdeal(persona1);PesoIdeal(persona2);PesoIdeal(persona3);PesoIdeal(persona4);
+        
+        
+        
+        
+    }
+    
+    public static void PesoIdeal(Persona p){
+        
+        PersonaServicio p1 = new PersonaServicio();
+        
+        int valor = p1.calcularIMC(p);
+        
+        switch (valor) {
+            case -1:
+                System.out.println(p.getNombre() + " está por debajo de su peso ideal.");
+                break;
+            case 0:
+                System.out.println(p.getNombre() + " está en su peso ideal.");
+                break;
+            default:
+                System.out.println(p.getNombre() + " tiene sobrepeso.");
+                break;
+        }
         
     }
     

@@ -48,6 +48,8 @@ public class CuentaBancariaServicio {
         
         cuenta.setSaldoActual(cuenta.getSaldoActual()+leer.nextDouble());
         
+        System.out.println("Se ha agregado tal cantidad a su cuenta. Su saldo actual es de $" + cuenta.getSaldoActual());
+        
     }
     
     public void retirar(CuentaBancaria cuenta){
@@ -71,17 +73,6 @@ public class CuentaBancariaServicio {
             System.out.println("Has retirado $" + retiro + " su saldo actual es de $" + cuenta.getSaldoActual());
         }
         
-        
-    }
-    
-    public void extraccionRapida1(CuentaBancaria cuenta){
-        
-        double saldo = cuenta.getSaldoActual();
-        
-        System.out.println("Se ha retirado el 20% del saldo, un total de $"+ 0.2*saldo+
-                " dejando un saldo de $" + 0.8*saldo);
-        
-        cuenta.setSaldoActual(0.8*saldo);
         
     }
     

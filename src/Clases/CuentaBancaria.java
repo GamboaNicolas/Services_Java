@@ -53,13 +53,11 @@ public class CuentaBancaria {
     public void setSaldoActual(double saldoActual) {
         this.saldoActual = saldoActual;
     }
-
+    
     
     @Override
     public String toString() {
-        return "CuentaBancaria{" + "Numerocuenta=" + Numerocuenta + ", dniCliente=" + dniCliente + '}';
+        return "CuentaBancaria{" + "Numerocuenta=" + Numerocuenta + ", dniCliente=" + dniCliente + ", saldoActual=" + saldoActual + '}';
     }
-    
-    
-    
+
 }
