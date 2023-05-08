@@ -30,7 +30,7 @@ public class Ejercicio3 {
         
         Persona persona4 = p1.crearPersona();
         
-        
+       
         PesoIdeal(persona1);PesoIdeal(persona2);PesoIdeal(persona3);PesoIdeal(persona4);
         
         

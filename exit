@@ -1,0 +1,174 @@
+[33mcommit 5d1438bf02deffa0ddd524a703651ff4c65420fa[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: “GamboaNicolas” <gamboa.nicolas2002@gmail.com>
+Date:   Thu May 4 22:11:10 2023 -0300
+
+    04/05 a la noche 2
+
+[1mdiff --git a/nbproject/private/private.xml b/nbproject/private/private.xml[m
+[1mindex 196aa68..6fc4b04 100644[m
+[1m--- a/nbproject/private/private.xml[m
+[1m+++ b/nbproject/private/private.xml[m
+[36m@@ -3,9 +3,9 @@[m
+     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="3"/>[m
+     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">[m
+         <group>[m
+[31m-            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Practica_clases_service/src/Clases/Persona.java</file>[m
+[31m-            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Practica_clases_service/src/Servicios/PersonaServicio.java</file>[m
+[31m-            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Practica_clases_service/src/Principales/Ejercicio3.java</file>[m
+[32m+[m[32m            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Practica_clases_service/src/Clases/CuentaBancaria.java</file>[m
+[32m+[m[32m            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Practica_clases_service/src/Principales/Ejercicio1.java</file>[m
+[32m+[m[32m            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Practica_clases_service/src/Servicios/CuentaBancariaServicio.java</file>[m
+         </group>[m
+     </open-files>[m
+ </project-private>[m
+[1mdiff --git a/src/Principales/Ejercicio1.java b/src/Principales/Ejercicio1.java[m
+[1mindex b8cc55b..1b91046 100644[m
+[1m--- a/src/Principales/Ejercicio1.java[m
+[1m+++ b/src/Principales/Ejercicio1.java[m
+[36m@@ -9,92 +9,92 @@[m [mimport Clases.CuentaBancaria;[m
+ import Servicios.CuentaBancariaServicio;[m
+ import java.util.Scanner;[m
+ [m
+[31m-[m
+ /**[m
+[31m- * listo Método para crear cuenta pidiéndole los datos al usuario.[m
+[31m-   listo Método ingresar(double): recibe una cantidad de dinero a ingresar y se le sumará al saldo actual.[m
+[31m-   listo Método retirar(double): recibe una cantidad de dinero a retirar y se le restara al saldo actual. Si la cuenta no tiene la cantidad de dinero a retirar se retirará el máximo posible hasta dejar la cuenta en 0.[m
+[31m-   listo Método extraccionRapida: le permitirá sacar solo un 20% de su saldo. Validar que el usuario no saque más del 20%.[m
+[31m-   listo Método consultarSaldo: permitirá consultar el saldo disponible en la cuenta.[m
+[31m-   listo Método consultarDatos: permitirá mostrar todos los datos de la cuenta.[m
+[32m+[m[32m * listo Método para crear cuenta pidiéndole los datos al usuario. listo Método[m
+[32m+[m[32m * ingresar(double): recibe una cantidad de dinero a ingresar y se le sumará al[m
+[32m+[m[32m * saldo actual. listo Método retirar(double): recibe una cantidad de dinero a[m
+[32m+[m[32m * retirar y se le restara al saldo actual. Si la cuenta no tiene la cantidad de[m
+[32m+[m[32m * dinero a retirar se retirará el máximo posible hasta dejar la cuenta en 0.[m
+[32m+[m[32m * listo Método extraccionRapida: le permitirá sacar solo un 20% de su saldo.[m
+[32m+[m[32m * Validar que el usuario no saque más del 20%. listo Método consultarSaldo:[m
+[32m+[m[32m * permitirá consultar el saldo disponible en la cuenta. listo Método[m
+[32m+[m[32m * consultarDatos: permitirá mostrar todos los datos de la cuenta.[m
+  */[m
+[32m+[m[32mpublic class Ejercicio1 {[m
+ [m
+[32m+[m[32m    public static void main(String[] args) {[m
+ [m
+[31m-public class Ejercicio1{[m
+[31m-    [m
+[31m-    public static void main(String[] args){[m
+[31m-        [m
+         Scanner leer = new Scanner(System.in);[m
+[31m-        [m
+[32m+[m
+         System.out.println("Bienvenido a la aplicación del banco,"[m
+                 + "\npara iniciar debe crear una cuenta bancaria.");[m
+[31m-        [m
+[32m+[m
+         CuentaBancariaServicio bank = new CuentaBancariaServicio();[m
+[31m-        [m
+[32m+[m
+         CuentaBancaria cuenta = bank.CrearCuenta();[m
+[31m-        [m
+[32m+[m
+         int opcion = 0;[m
+[31m-        [m
+[32m+[m
+         System.out.println("");[m
+[31m-        [m
+[32m+[m
+         while (opcion != 5) {[m
+[31m-            [m
+[32m+[m
+             opciones();[m
+[31m-            [m
+[32m+[m
+             opcion = leer.nextInt();[m
+[31m-            [m
+[31m-            while (!(opcion == 1 || opcion == 2 || opcion== 3 || opcion == 4 || opcion == 5)) {                [m
+[31m-                [m
+[32m+[m
+[32m+[m[32m            while (!(opcion == 1 || opcion == 2 || opcion == 3 || opcion == 4 || opcion == 5)) {[m
+[32m+[m
+                 System.out.println("Por favor, ingrese una opcion válida.");[m
+[31m-                [m
+[32m+[m
+                 opciones();[m
+[31m-            [m
+[32m+[m
+                 opcion = leer.nextInt();[m
+[31m-                [m
+[32m+[m
+             }[m
+[31m-            [m
+[31m-            switch(opcion){[m
+[31m-                [m
+[32m+[m
+[32m+[m[32m            switch (opcion) {[m
+[32m+[m
+                 case 1:[m
+                     bank.ingresar(cuenta);[m
+                     break;[m
+                 case 2:[m
+[31m-                    [m
+[32m+[m
+                     System.out.println("¿Qué tipo de extracción desea realizar?\n1_Normal\n2_Rápida(hasta el 20% del saldo)");[m
+[31m-                    [m
+[32m+[m
+                     int n = leer.nextInt();[m
+[31m-                    [m
+[31m-                    while (!(n == 1 || n == 2)) {                        [m
+[31m-                        [m
+[32m+[m
+[32m+[m[32m                    while (!(n == 1 || n == 2)) {[m
+[32m+[m
+                         System.out.println("Ingrese una opcion válida");[m
+                         System.out.println("¿Qué tipo de extracción desea realizar?\n1_Normal\n2_Rápida(hasta el 20% del saldo)");[m
+[31m-                    [m
+[32m+[m
+                         n = leer.nextInt();[m
+[31m-                        [m
+[32m+[m
+                     }[m
+[31m-                    [m
+[32m+[m
+                     if (n == 1) {[m
+                         bank.retirar(cuenta);[m
+[31m-                    }else{[m
+[32m+[m[32m                    } else {[m
+                         bank.extraccionRapida(cuenta);[m
+                     }[m
+[31m-                    [m
+[32m+[m
+                     break;[m
+                 case 3:[m
+                     bank.consultarSaldo(cuenta);[m
+                     break;[m
+[31m-                default:[m
+[32m+[m[32m                case 4:[m
+                     bank.consultarDatos(cuenta);[m
+[31m-            }   [m
+[31m-            [m
+[31m-            [m
+[31m-            [m
+[32m+[m[32m                    break;[m
+[32m+[m[32m                default:[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m            }[m
+[32m+[m
+         }[m
+[31m-        [m
+[31m-        [m
+[32m+[m
+     }[m
+[31m-    [m
+[31m-    public static void opciones(){[m
+[32m+[m
+[32m+[m[32m    public static void opciones() {[m
+         System.out.println("¿Qué desea hacer?");[m
+         System.out.println("1_Ingresar dinero a mi cuenta");[m
+         System.out.println("2_Retirar dinero de mi cuenta");[m
+[36m@@ -102,5 +102,5 @@[m [mpublic class Ejercicio1{[m
+         System.out.println("4_consultar datos");[m
+         System.out.println("5_Salir");[m
+     }[m
+[31m-    [m
+[32m+[m
+ }[m

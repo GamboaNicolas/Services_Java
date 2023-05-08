@@ -16,6 +16,11 @@ public class PersonaServicio {
     
     Scanner leer = new Scanner(System.in);
     
+    /**
+     * This functions creates a "Persona" object, ask everithing neccesary and then it is returned.
+     * @return Persona 
+     */
+    
     public Persona crearPersona(){
         
         Persona persona = new Persona();
@@ -52,12 +57,26 @@ public class PersonaServicio {
         
     }
     
+    /**
+     * Este metodo determina si una persona es mayor de edad o no.
+     * @param persona
+     * @return True o False segun si la persona es mayor de edad o no.
+     */
+    
     public boolean esMayorDeEdad(Persona persona){
         
         return (persona.getEdad() >= 18);
         
     }
 
+    /**
+     * Esta funcion calcula el IMC de la persona y devuelve una conclusion acerca de su peso.
+     * 
+     * @param persona
+     * @return -1, 0 o 1 segun el IMC de la persona: -1(bajo peso), 0 (Peso ideal), 1(sobre peso).
+     * 
+     */
+    
     public int calcularIMC(Persona persona){
         
         double IMC = persona.getPeso()/(Math.pow(persona.getAltura(),2));
